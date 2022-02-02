@@ -1,10 +1,25 @@
 @font-face {
     font-family: 'lobster_tworegular';
     src: url('/fonts/lobstertwo-regular-webfont.woff2') format('woff2'),
-         url('/fonts/lobstertwo-regular-webfont.woff') format('woff');
+        url('/fonts/lobstertwo-regular-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
+}
 
+@font-face {
+    font-family: 'rubik';
+    src: url('/fonts/rubik-italic-variablefont_wght-webfont.woff2') format('woff2'),
+        url('/fonts/rubik-italic-variablefont_wght-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'rubik';
+    src: url('/fonts/rubik-variablefont_wght-webfont.woff2') format('woff2'),
+        url('/fonts/rubik-variablefont_wght-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
 }
 
 /* RESET */
@@ -17,40 +32,47 @@ b, u, i, center,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
 }
+
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
+article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
-	display: block;
+    display: block;
 }
+
 body {
-	line-height: 1;
+    line-height: 1;
 }
+
 ol, ul {
-	list-style: none;
+    list-style: none;
 }
+
 blockquote, q {
-	quotes: none;
+    quotes: none;
 }
+
 blockquote:before, blockquote:after,
 q:before, q:after {
-	content: '';
-	content: none;
+    content: '';
+    content: none;
 }
+
 table {
-	border-collapse: collapse;
-	border-spacing: 0;
+    border-collapse: collapse;
+    border-spacing: 0;
 }
+
 /* END RESET */
 
 html {
@@ -58,27 +80,27 @@ html {
 }
 
 body {
-    background: rgb(255,248,227);
-    background: radial-gradient(circle, rgba(255,248,227,1) 0%, rgba(240,254,255,1) 100%); 
-}
-
-h1 {
-    font-size: 2rem;
+    background: rgb(255, 248, 227);
+    background: radial-gradient(circle, rgba(255, 248, 227, 1) 0%, rgba(240, 254, 255, 1) 100%);
+    /* background: black;
+    color: white; */
+    font-family: 'rubik';
 }
 
 .wrap {
-    position: fixed;
-    height: 100vh;
+    /* position: fixed; */
+    height: 50vh;
     width: 100vw;
     top: 0;
     left: 0;
+    margin: 5rem auto;
 }
 
-h2 {
+h1 {
     /* text-transform: uppercase; */
     text-rendering: optimizeLegibility;
-    top: 50%;
-    left: 50%;
+    top: 30%;
+    left: 40%;
     font-size: 20vw;
     white-space: nowrap;
     color: rgba(255, 158, 177, 0.5);
@@ -90,12 +112,23 @@ h2 {
     letter-spacing: 4vw;
 }
 
-@keyframes h2-before {
-    0% {color: #e7e4e3; left: 0; top: 0; transform: none;}
-    100% {color: #fbf7f4; left: -0.3%; top: -4.8%; transform: translate(1.6vw, 0) skew(-13deg) scale(1, 1.2);}
+@keyframes h1-before {
+    0% {
+        color: #e7e4e3;
+        left: 0;
+        top: 0;
+        transform: none;
+    }
+
+    100% {
+        color: #fbf7f4;
+        left: -0.3%;
+        top: -4.8%;
+        transform: translate(1.6vw, 0) skew(-13deg) scale(1, 1.2);
+    }
 }
 
-h2:before {
+h1:before {
     content: attr(data-heading);
     position: absolute;
     left: -0.3%;
@@ -106,16 +139,23 @@ h2:before {
     color: #fbf7f4;
     transform: translate(1.6vw, 0) skew(-13deg) scale(1, 1.2);
     z-index: 2;
-    text-shadow: 2px -1px 6px rgba(0,0,0,0.2);
-    animation: h2-before 2s linear 1s 1 normal backwards;
+    text-shadow: 2px -1px 6px rgba(0, 0, 0, 0.2);
+    animation: h1-before 2s linear 1s 1 normal backwards;
 }
 
-@keyframes h2-after {
-    0% {color: #e7e4e3; transform: none;}
-    100% {color: #e4e1de; transform: translate(0vw, 0) skew(13deg) scale(1, 0.8);}
+@keyframes h1-after {
+    0% {
+        color: #e7e4e3;
+        transform: none;
+    }
+
+    100% {
+        color: #e4e1de;
+        transform: translate(0vw, 0) skew(13deg) scale(1, 0.8);
+    }
 }
 
-h2:after {
+h1:after {
     content: attr(data-heading);
     position: absolute;
     left: 0;
@@ -127,6 +167,55 @@ h2:after {
     transform: translate(0vw, 0) skew(13deg) scale(1, 0.8);
     clip-path: polygon(0 50%, 100% 50%, 100% 100%, 0% 100%);
     z-index: 1;
-    text-shadow: 2px -1px 6px rgba(0,0,0,0.3);
-    animation: h2-after 2s linear 1s 1 normal backwards;
+    text-shadow: 2px -1px 6px rgba(0, 0, 0, 0.3);
+    animation: h1-after 2s linear 1s 1 normal backwards;
+}
+
+h2 {
+    font-size: 2rem;
+    position: absolute;
+    right: 20%;
+    top: 60%;
+}
+
+h3 {
+    text-align: center;
+    margin: 1rem 0 3rem 0;
+    font-weight: 700;
+    font-size: 2rem;
+}
+
+article {
+    margin: 0 auto;
+    max-width: fit-content;
+}
+
+h4 {
+    margin: 1rem 0 1rem 1rem;
+    font-style: italic;
+}
+
+p {
+    margin: 1rem 0 3rem 0;
+}
+
+.p {
+    margin: 1rem 0 1rem 0;
+}
+
+a {
+    color: black;
+}
+
+ul {
+    margin: 1rem 0 3rem 0;
+}
+
+ul li {
+    margin: 0.5rem 0 0.5rem 0.5rem;
+}
+
+ul li:before {
+    content: '~';
+    margin: 0 0.5rem 0 0;
 }
