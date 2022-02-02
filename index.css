@@ -176,6 +176,7 @@ h2 {
     position: absolute;
     right: 20%;
     top: 60%;
+    font-family: 'lobster_tworegular';
 }
 
 h3 {
@@ -205,6 +206,15 @@ p {
 
 a {
     color: black;
+    text-decoration: none;
+    border-style: none none solid none;
+    border-color: black;
+    padding: 0 0 2px 0;
+    border-width: 1px;
+}
+
+a:hover {
+    border-color: rgb(255, 158, 177);
 }
 
 ul {
